@@ -55,6 +55,7 @@
         "babel-loader": "^8.1.0",
         "babel-plugin-inline-react-svg": "^1.1.1",
         "babel-plugin-styled-components": "^1.11.1",
+        "babel-plugin-transform-remove-console": "^6.9.4",
         "cross-env": "^7.0.2",
         "eslint": "^7.12.1",
         "eslint-config-prettier": "^6.15.0",

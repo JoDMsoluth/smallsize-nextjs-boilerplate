@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { css } from '../../../../utils';
+import { css } from '../../../../../utils';
 
 export const Wrapper = styled.footer.attrs((props: any) => ({
     'data-test-id': props.testId,
