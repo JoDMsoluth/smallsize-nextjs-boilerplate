@@ -1,4 +1,30 @@
 {
-  "presets": ["next/babel"],
-  "plugins": [["@babel/plugin-proposal-decorators", { "legacy": true }]]
+    "presets": [["next/babel"]],
+    "env": {
+        "production": {
+            "presets": [
+                [
+                    "next/babel",
+                    {
+                        "preset-env": {
+                            "useBuiltIns": "usage",
+                            "corejs": "3.6.5",
+                            "targets": "> 0.25%, not dead",
+                            "debug": false
+                        }
+                    }
+                ]
+            ]
+        }
+    },
+    "plugins": [
+        ["inline-react-svg"],
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        [
+            "styled-components",
+            {
+                "ssr": true
+            }
+        ]
+    ]
 }

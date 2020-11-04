@@ -1,20 +1,38 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "experimentalDecorators": true
-  },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "experimentalDecorators": true,
+
+        // 상대경로
+        "baseUrl": ".",
+        "paths": {
+            "@/hooks": ["./src/hooks"],
+            "@/hooks/*": ["./src/hooks/*"],
+            "@/services": ["./src/services"],
+            "@/containers/*": ["./src/containers/*"],
+            "@/pages/*": ["./src/pages/*"],
+            "@/recoil/*": ["./src/recoil/*"],
+            "@/utils": ["./utils"], // will connect to all utiliy related functions
+            "@/constant": ["./utils/constant"],
+            "@/constant/*": ["./utils/constant/*"],
+            "@/components/*": ["./src/components/*"], // to all defined components
+            "@/public/*": ["./public/*"],
+            "@/config": ["./config"],
+            "@/config/*": ["./config/*"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
