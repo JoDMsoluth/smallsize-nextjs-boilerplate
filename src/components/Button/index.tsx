@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { DiAtom } from 'react-icons/di';
 
 interface ButtonProps {
     children: string;
@@ -8,15 +9,19 @@ interface ButtonProps {
 
 export default function Button({ children, ...props }: ButtonProps) {
     return (
-        <button type="button" {...props}>
+        <S.Button type="button" {...props}>
+            <DiAtom />
             {children}
-        </button>
+        </S.Button>
     );
 }
 
 const S: any = {};
 
 S.Button = styled.button`
-    background-color: red;
+    background-color: gray;
     color: white;
+    & > svg {
+        color: blue;
+    }
 `;

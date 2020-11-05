@@ -16,5 +16,15 @@ module.exports = {
     ],
     moduleNameMapper: {
         '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+        '@/hooks/(.*)': '<rootDir>/src/hooks/$1',
+        '@/services/(.*)': '<rootDir>/src/services/$1',
+        '@/containers/(.*)': '<rootDir>/src/containers/$1',
+        '@/pages/(.*)': '<rootDir>/src/pages/$1',
+        '@/recoil/(.*)': '<rootDir>/src/recoil/$1',
+        '@/utils/(.*)': '<rootDir>/utils', // will connect to all utiliy related functi/$1ons
+        '@/constant/(.*)': '<rootDir>/utils/constant/$1',
+        '@/components/(.*)': '<rootDir>/src/components', // to all defined compone/$1nts
+        '@/public/(.*)': '<rootDir>/public/$1',
+        '@/config/(.*)': '<rootDir>/config/$1',
     },
-}
+};

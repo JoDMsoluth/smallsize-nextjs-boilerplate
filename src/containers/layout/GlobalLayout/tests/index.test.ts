@@ -1,7 +1,7 @@
 import 'react';
 // import { shallow } from 'enzyme'
 
-// import GlobalLayout from '../index'
+// import GlobalLayout from '../index';
 
 describe('<GlobalLayout />', () => {
     it('Expect to have unit tests specified', () => {
