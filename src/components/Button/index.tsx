@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { DiAtom } from 'react-icons/di';
+import { theme } from '@/utils';
 
 interface ButtonProps {
     children: string;
@@ -19,9 +20,15 @@ export default function Button({ children, ...props }: ButtonProps) {
 const S: any = {};
 
 S.Button = styled.button`
-    background-color: gray;
-    color: white;
+    background-color: ${theme('button.fg')};
+    color: ${theme('button.primary')};
     & > svg {
         color: blue;
+    }
+    &:hover {
+        background-color: ${theme('button.hoverBg')};
+    }
+    &:active {
+        background-color: ${theme('button.activeBg')};
     }
 `;

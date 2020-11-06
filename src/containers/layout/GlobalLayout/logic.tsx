@@ -1,6 +1,9 @@
 // import { useEffect } from 'react';
 
-import { buildLog } from '../../../../utils';
+import { themeState } from '@/recoil/theme';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { BStore, buildLog, isBrowser } from '../../../../utils';
 
 /* eslint-disable-next-line */
 const log = buildLog('L:GlobalLayout');
@@ -40,6 +43,18 @@ export const logBuddha = () => {
 // ###############################
 // init & uninit
 // ###############################
-export const useInit = () => {
-    // useEffect(() => {}, []);
+export const useInit = (): 'white' | 'dark' => {
+    // load debug graph
+    const [theme, setTheme] = useRecoilState(themeState);
+
+    useEffect(() => logBuddha(), []);
+
+    useEffect(() => {
+        if (isBrowser) {
+            const storeTheme = BStore.get('theme');
+            setTheme(storeTheme);
+        }
+    }, [isBrowser]);
+
+    return theme;
 };

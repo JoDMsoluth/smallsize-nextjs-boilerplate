@@ -6,6 +6,7 @@ import { ROUTE } from 'utils/constant';
 import { buildLog } from 'utils';
 import Counter from '@/components/Counter';
 import LoginForm from '@/components/Form/LoginForm';
+import { useRouter } from 'next/router';
 
 /* eslint-disable-next-line */
 const log = buildLog('page:home');
@@ -17,9 +18,11 @@ export default function Home() {
         description: `${SITE_DESC}`,
     };
 
+    const router = useRouter();
+
     return (
         <GlobalLayout page={ROUTE.HOME} seoConfig={seoConfig}>
-            <div>
+            <>
                 <Head>
                     <title>JodSol</title>
                     <link rel="icon" href="/favicon.ico" />
@@ -28,10 +31,16 @@ export default function Home() {
                 <LoginForm />
                 <main>
                     <Counter />
+                    <button
+                        type="button"
+                        onClick={() => router.push('/post/1')}
+                    >
+                        이동
+                    </button>
                 </main>
 
                 <footer></footer>
-            </div>
+            </>
         </GlobalLayout>
     );
 }

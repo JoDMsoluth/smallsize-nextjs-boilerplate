@@ -4,19 +4,24 @@
  * otherwhise the render will not be triggled
  */
 
-import React from 'react';
-import Head from 'next/head';
+import { themeSkins } from '@/utils';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { DEFAULT_THEME } from '@/config';
 
 // import MarkDownStyle from './MarkDownStyle'
 import GlobalStyle from './GlobalStyle';
 
-const ThemeContainer = ({ children, theme: { themeData } }) => {
+interface ThemeContainerProps {
+    children: JSX.Element;
+    theme: any;
+}
+const ThemeContainer = ({ children, theme }: ThemeContainerProps) => {
+    const [themeState, setThemeState] = useState<string>(DEFAULT_THEME);
+
+    useEffect(() => setThemeState(theme), [theme]);
     return (
-        <ThemeProvider theme={themeData}>
-            <Head>
-                <meta name="theme-color" content={themeData.mobileTab} />
-            </Head>
+        <ThemeProvider theme={themeSkins[themeState]}>
             <div>{children}</div>
             <GlobalStyle />
         </ThemeProvider>

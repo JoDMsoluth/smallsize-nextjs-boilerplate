@@ -56,6 +56,11 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-resizer {
     background: grey;
   }
+
+  color: ${theme('font')}
+  a {
+    color: ${theme('link')}
+  }
 `;
 
 export default GlobalStyle;

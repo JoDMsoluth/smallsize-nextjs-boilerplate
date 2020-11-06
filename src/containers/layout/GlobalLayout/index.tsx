@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BlogJsonLdProps, NextSeoProps } from 'next-seo';
 
 import ThemePalette from '../ThemePalette';
@@ -12,9 +12,7 @@ import { ErrorPage, Footer } from './dynamic';
 import Header from '@/containers/unit/Header';
 import SEO from './SEO';
 
-import { logBuddha } from './logic';
-//import { useDevice } from '../../../hooks';
-import white from 'utils/themes/skins/white';
+import { useInit } from './logic';
 import S from './styles';
 
 interface GlobalLayoutContainerProps {
@@ -30,13 +28,11 @@ const GlobalLayoutContainer = ({
     errorCode,
     children,
 }: GlobalLayoutContainerProps) => {
-    // const { isMobile } = useDevice();
-
-    // load debug graph
-    useEffect(() => logBuddha(), []);
+    // Get Theme State
+    const theme = useInit();
 
     return (
-        <ThemePalette theme={{ themeData: white }}>
+        <ThemePalette theme={theme}>
             <S.Wrapper>
                 {errorCode ? (
                     <ErrorPage errorCode={errorCode} page={page} />
@@ -44,13 +40,13 @@ const GlobalLayoutContainer = ({
                     <>
                         <SEO page={page} config={seoConfig} />
 
+                        <Header />
                         <S.InnerWrapper>
                             <S.ContentWrapper>
-                                <Header />
                                 <S.BodyWrapper>{children}</S.BodyWrapper>
-                                <Footer />
                             </S.ContentWrapper>
                         </S.InnerWrapper>
+                        <Footer />
                     </>
                 )}
             </S.Wrapper>

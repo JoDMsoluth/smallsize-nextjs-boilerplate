@@ -1,4 +1,4 @@
-import { countState, incrementCount, decrementCount } from '@/recoil/atoms';
+import { countState, incrementCount, decrementCount } from '@/recoil/counter';
 import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 
 const useCounter = () => ({

@@ -106,6 +106,15 @@ const zIndex = {
     sidebar: 1999,
 };
 
+// app header height
+export const APP_HEADER_HEIGHT = '5rem';
+
+// app footer height
+export const APP_FOOTER_HEIGHT = '15rem';
+
+// app contents height
+export const APP_CONTENTS_HEIGHT = `calc(100vh - ${APP_HEADER_HEIGHT} - ${APP_FOOTER_HEIGHT})`;
+
 // global max width
 export const GLOBAL_MAX_WIDTH = '1520px';
 
@@ -171,6 +180,9 @@ const css = {
     ARTICLE_CONTENT_WIDTH,
     ARTICLE_STICKER_WIDTH,
     ARTICLE_CONTENT_OFFSET,
+    APP_HEADER_HEIGHT,
+    APP_CONTENTS_HEIGHT,
+    APP_FOOTER_HEIGHT,
 };
 
 export default css;

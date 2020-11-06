@@ -24,17 +24,6 @@ module.exports = {
                 handler: 'StaleWhileRevalidate',
             },
             {
-                // github avatars
-                urlPattern: /^https:\/\/avatars2\.githubusercontent\.com/,
-                handler: 'CacheFirst',
-                options: {
-                    cacheName: 'github-images',
-                    expiration: {
-                        maxAgeSeconds: 7 * 24 * 60 * 60, // 7 Days
-                    },
-                },
-            },
-            {
                 // google fonts
                 urlPattern: /^https:\/\/fonts\.googleapis\.com/,
                 handler: 'CacheFirst',
@@ -61,4 +50,4 @@ module.exports = {
             },
         ],
     },
-}
+};

@@ -6,18 +6,16 @@ const S: any = {};
 
 // background: #3b5456;
 S.Wrapper = styled.div`
-    ${css.flex('justify-center')};
     background-color: ${theme('spaceBg')};
     background-attachment: fixed;
 `;
 
-S.InnerWrapper = styled.div`
-    ${css.flexColumn()};
+S.InnerWrapper = styled.main`
+    min-height: ${css.APP_CONTENTS_HEIGHT};
     max-width: ${css.MAX_CONTENT_WIDTH};
+    ${css.flex('justify-center')};
     width: 100vw;
     position: relative;
-    height: 100%;
-    min-height: 100vh;
     background: ${theme('bodyBg')};
     transition: all 0.2s;
     ${css.media.tablet`
@@ -25,7 +23,9 @@ S.InnerWrapper = styled.div`
     padding-left: 0;
   `};
 `;
-S.BodyWrapper = styled.div``;
+S.BodyWrapper = styled.main`
+    background: ${theme('main')};
+`;
 
 S.ContentWrapper = styled.div``;
 

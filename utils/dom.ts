@@ -5,8 +5,8 @@ const hasDocument = typeof document === 'object' && document !== null;
 const hasWindow =
     typeof window === 'object' && window !== null && window.self === window;
 
-export const isBrowser = () => hasDocument && hasWindow;
-const getDocument = () => (isBrowser() ? document : null);
+export const isBrowser = hasDocument && hasWindow;
+const getDocument = () => (isBrowser ? document : null);
 
 /**
  * scroll to page top
