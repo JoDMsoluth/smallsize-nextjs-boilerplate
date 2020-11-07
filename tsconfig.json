@@ -29,10 +29,15 @@
             "@/constant/*": ["./utils/constant/*"],
             "@/components/*": ["./src/components/*"], // to all defined components
             "@/public/*": ["./public/*"],
-            "@/config": ["./config"],
-            "@/config/*": ["./config/*"]
+            "@/config": ["./config"]
         }
     },
     "exclude": ["node_modules"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "config/config.ts",
+        "config/index.ts"
+    ]
 }

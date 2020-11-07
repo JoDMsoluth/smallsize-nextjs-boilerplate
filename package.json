@@ -68,7 +68,8 @@
         "jest-watch-typeahead": "^0.6.1",
         "lint-staged": "^10.5.1",
         "prettier": "^2.1.2",
-        "react-test-renderer": "^17.0.1"
+        "react-test-renderer": "^17.0.1",
+        "ts-jest": "^26.4.3"
     },
     "license": "MIT"
 }

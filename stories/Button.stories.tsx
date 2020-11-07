@@ -1,6 +1,8 @@
-import Button from '@/components/Button';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
+import { css } from '@/utils';
+import Button from '@/components/Button';
 
 export default {
     title: 'components|Button',
@@ -8,30 +10,23 @@ export default {
     decorators: [withKnobs],
 };
 
-export const button = () => {
-    const label = text('children', 'BUTTON');
-    const size = select('size', ['small', 'medium', 'big'], 'medium');
-    const theme = select(
-        'theme',
-        ['primary', 'secondary', 'tertiary'],
-        'primary'
-    );
-    const disabled = boolean('disabled', false);
-    const width = text('width', '');
-
+export const CustomButton = () => {
     return (
-        <Button
-            size={size}
-            theme={theme}
-            disabled={disabled}
-            width={width}
-            onClick={action('onClick')}
-        >
-            {label}
-        </Button>
+        <>
+            <S.Wrap>
+                <Button onClick={action('onClick')}>버튼1</Button>
+            </S.Wrap>
+        </>
     );
 };
 
-button.story = {
-    name: 'Default',
+CustomButton.story = {
+    name: 'Button',
 };
+
+const S: any = {};
+
+S.Wrap = styled.div`
+    height: 10rem;
+    ${css.flexColumn('align-both', 'justify-around')};
+`;
