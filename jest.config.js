@@ -19,6 +19,7 @@ module.exports = {
     moduleNameMapper: {
         '@/utils': '<rootDir>/utils', // will connect to all utiliy related functi/$1ons
         '@/config': '<rootDir>/config',
+        '@/config/(.*)': '<rootDir>/config/$1',
         '@/hooks': '<rootDir>/src/hooks',
         '@/hooks/(.*)': '<rootDir>/src/hooks/$1',
         '@/services': '<rootDir>/src/services',
